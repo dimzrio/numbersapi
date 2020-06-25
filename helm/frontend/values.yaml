@@ -6,8 +6,8 @@ image:
   pullPolicy: Always
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort
+  port: 8080
   targetPort: 8080
 
 ingress:
@@ -16,7 +16,7 @@ ingress:
   hosts:
     - host: numbersapi.example.com
       paths: 
-        - /
+        - /*
 
 resources:
   limits:
